@@ -33,7 +33,7 @@
 }
 
 .landing-page .container .header-area .links {
-    width: 100%;
+    width: 40%;
 }
 
 .landing-page .container .header-area .links li {
@@ -48,8 +48,12 @@
     -o-transition: 0.3s;
 }
 
-.landing-page .container .header-area .links li a:hover,
-.landing-page .container .header-area .links li a.active {
+.landing-page .container .header-area .sign-up.login-btn {
+    width: 150px;
+}
+
+.landing-page .container .header-area li a:hover,
+.landing-page .container .header-area li a.active {
     color: var(--main-color)
 }
 
