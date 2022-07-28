@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
 }
 
 ul {
@@ -30,44 +31,6 @@ a {
     text-decoration: none;
     text-transform: capitalize;
 }
-
-.setting-box {
-    position: absolute;
-    padding: 5px;
-    top: 0;
-    left: -200px;
-    z-index: 10;
-    background-color: #fff;
-    min-height: 100vh;
-    width: 200px;
-    transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
-}
-
-.setting-box.open {
-    left: 0;
-}
-
-.setting-box .toggle-setting {
-    position: absolute;
-    right: -40px;
-    top: 180px;
-    padding: 5px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-color: #fff;
-    /* border-radius: 50%; */
-}
-
-.setting-box .toggle-setting i.fa.fa-cog {
-    color: #000;
-}
-
-.setting-box .setting-container {}
 
 .container {
     width: 85%;

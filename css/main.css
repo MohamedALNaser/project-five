@@ -1,3 +1,143 @@
+.setting-box {
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    left: -200px;
+    z-index: 10;
+    background-color: #fff;
+    min-height: 100vh;
+    width: 200px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.setting-box.open {
+    left: 0;
+}
+
+.setting-box .toggle-setting {
+    position: absolute;
+    right: -55px;
+    top: 15px;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #fff;
+    /* border-radius: 50%; */
+}
+
+.setting-box .toggle-setting i.fa.fa-cog {
+    color: #000;
+}
+
+.setting-box .setting-container {
+    padding: 5px 0;
+}
+
+.setting-box .setting-container .option-box {
+    text-align: center;
+}
+
+.setting-box .setting-container .option-box .colors {
+    background-color: rgb(34, 36, 38);
+    padding: 5px 0;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.setting-box .setting-container .option-box .colors h4 {
+    color: black;
+    font-size: 18px;
+}
+
+.setting-box .setting-container .option-box .colors .colors-list {
+    padding: 10px 15px;
+    gap: 14px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: fit-content;
+    transition: 0.7s linear;
+    -webkit-transition: 0.7s linear;
+    -moz-transition: 0.7s linear;
+    -ms-transition: 0.7s linear;
+    -o-transition: 0.7s linear;
+}
+
+.setting-box .setting-container .option-box .colors .colors-list:hover {
+    overflow: visible;
+    height: fit-content;
+}
+
+.setting-box .setting-container .option-box .colors .colors-list li {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.setting-box .setting-container .option-box .colors .colors-list li.active {
+    opacity: 1;
+    border: 3px solid black;
+}
+
+.setting-box .setting-container .option-box .random-background {
+    background-color: rgb(34, 36, 38);
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 5px 0 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.setting-box .setting-container .option-box .random-background h4 {
+    padding: 10px 0;
+    color: black;
+    font-size: 18px;
+}
+
+.setting-box .setting-container .option-box .random-background ul.random-list {
+    justify-content: center;
+    gap: 5px;
+}
+
+.setting-box .setting-container .option-box .random-background ul.random-list li {
+    /* background-color: rgb(202, 142, 0); */
+    background-color: var(--main-color);
+    padding: 8px 20px;
+    margin: 0;
+    opacity: 0.5;
+    cursor: pointer;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.setting-box .setting-container .option-box .random-background ul.random-list li.active {
+    opacity: 1;
+}
+
 .landing-page {
     min-height: 100vh;
     background-image: url("./../imgs/1920x1080/02.jpg");
