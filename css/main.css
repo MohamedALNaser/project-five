@@ -177,8 +177,6 @@
 .landing-page {
     min-height: 100vh;
     background-image: url("./../imgs/02.jpg");
-    background-image: url("./../imgs/03.jpg");
-    background-image: url("./../imgs/04.jpg");
     background-size: cover;
     position: relative;
 }

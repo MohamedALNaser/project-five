@@ -129,7 +129,7 @@ const randomBackground = (randomOption) => {
     randomNumber = Math.floor(Math.random() * 5);
     bgForOptNo = randomNumber;
     window.localStorage.setItem("bgForOptNo", bgForOptNo);
-    imgesBackground = `./../imgs/0${bgForOptNo}.jpg`;
+    imgesBackground = `imgs/0${bgForOptNo}.jpg`;
     landingPage.style.backgroundImage = `url(${imgesBackground})`;
     landingPage.style.transition = " 0.3s";
 }
@@ -144,7 +144,7 @@ if (randomOption === null || randomOption === "YES") {
 } else {
     randowmLi[1].classList.add("active");
     randowmLi[0].classList.remove("active");
-    imgesBackground = `./../imgs/0${(bgForOptNo) || 1 }.jpg`;
+    imgesBackground = `imgs/0${(bgForOptNo) || 1 }.jpg`;
     landingPage.style.backgroundImage = `url(${imgesBackground})`;
     landingPage.style.transition = " 0.3s";
 
