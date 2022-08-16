@@ -8,12 +8,12 @@
 
 :root {
     --main-color: #ff9800;
+    --sections-main-padding: 30px;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     text-transform: capitalize;
-    color: white;
 }
 
 ul {
@@ -34,9 +34,7 @@ a {
 }
 
 .container {
-    width: 85%;
-    min-height: 100vh;
-    padding-top: 20px;
+    width: 1170px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

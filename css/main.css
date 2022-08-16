@@ -1,5 +1,6 @@
 .setting-box {
-    position: absolute;
+    color: white;
+    position: fixed;
     padding: 5px;
     top: 0;
     left: -200px;
@@ -21,7 +22,7 @@
 .setting-box .toggle-setting {
     position: absolute;
     right: -55px;
-    top: 15px;
+    top: 170px;
     padding: 5px;
     width: 40px;
     height: 40px;
@@ -159,7 +160,8 @@
 .setting-box .setting-container .option-box .random-background ul.random-list li {
     /* background-color: rgb(202, 142, 0); */
     background-color: var(--main-color);
-    padding: 8px 20px;
+    padding: 4px 25px;
+    font-size: 12px;
     margin: 0;
     opacity: 0.5;
     cursor: pointer;
@@ -175,9 +177,12 @@
 }
 
 .landing-page {
+    color: white;
     min-height: 100vh;
     background-image: url("./../imgs/02.jpg");
     background-size: cover;
+    position: relative;
+    /* background-repeat: no-repeat; */
     position: relative;
 }
 
@@ -194,6 +199,8 @@
 .landing-page .container .header-area {
     font-weight: bold;
     display: flex;
+    padding-top: var(--sections-main-padding);
+    padding-bottom: var(--sections-main-padding);
     justify-content: space-between;
     align-items: center;
     text-transform: capitalize;
@@ -235,7 +242,7 @@
 
 .landing-page .container .intro-text {
     position: absolute;
-    top: 50%;
+    top: 300px;
     left: 50%;
     z-index: 2;
     text-align: center;
@@ -259,4 +266,92 @@
 .landing-page .container .intro-text p {
     font-size: 17px;
     line-height: 1.6;
+}
+
+.about-us {
+    display: flex;
+    padding-top: var(--sections-main-padding);
+    padding-bottom: var(--sections-main-padding);
+}
+
+.about-us .info-box {
+    flex: 1;
+    padding: 15px 0;
+}
+
+.about-us .info-box h2 {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.about-us .info-box p {
+    color: #9b9393;
+    margin: 35px 0 0;
+    line-height: 1.8;
+}
+
+.about-us .img-box {
+    flex: 1;
+    text-align: center;
+}
+
+.about-us .img-box img {
+    width: 250px;
+}
+
+.skills {
+    background-color: #eee;
+    padding-top: var(--sections-main-padding);
+    padding-bottom: var(--sections-main-padding);
+}
+
+.skills h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 0 50px;
+}
+
+.skills .container .skill-box {
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.skills .container .skill-box .skill {
+    width: 150px;
+    text-align: center;
+}
+
+.skills .container .skill-box .percentage {
+    background-color: #eeeeee6b;
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills .container .skill-box .percentage span {
+    position: absolute;
+    background-color: var(--main-color);
+    height: 100%;
+    width: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 1.5s;
+    -webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -ms-transition: 1.5s;
+    -o-transition: 1.5s;
 }

@@ -62,7 +62,7 @@ const addLiColorsOption = function(liColorsLength) {
             // liInputNumberValue.value = temp;
             // activeLiColor = temp - 1;
             activeLiColor = liColorsLength - 1;
-            console.log()
+
         }
     } else {
         activeLiColor = 0;
@@ -89,7 +89,6 @@ const addLiColorsOption = function(liColorsLength) {
     // click li to select change the main color
     liColor.forEach((li, j) => {
         li.addEventListener("click", () => {
-            console.log(j)
             liColor.forEach((e) => {
                 e.classList.remove("active");
             });
@@ -165,7 +164,21 @@ randowmLi[1].addEventListener("click", () => {
 
     randomOption = "NO";
     clearInterval(randomBackg)
-    console.log("back number ", bgForOptNo);
 
 });
 // ##################################################################
+
+/// our skills animation
+let skills = document.querySelector(".skills");
+let spans = document.querySelectorAll(".skills .container .skill-box .percentage span");
+window.onscroll = function() {
+    // console.log((skills.offsetTop + skills.offsetHeight - this.innerHeight) + "===" + window.scrollY);
+    if (window.scrollY >= (skills.offsetTop + skills.offsetHeight - this.innerHeight)) {
+        spans.forEach((span, index) => {
+            setTimeout(() => {
+                span.style.width = span.dataset.precet;
+                span.innerHTML = span.dataset.precet;
+            }, index * 1000);
+        })
+    }
+}
