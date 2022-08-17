@@ -182,3 +182,76 @@ window.onscroll = function() {
         })
     }
 }
+
+// ##################################################################
+
+/// our Gallery popup box 
+// let GAllery= document.querySelector(".Gallery");
+let GalleryImages = document.querySelectorAll(".Gallery .Gallery-box img");
+GalleryImages.forEach((img, i) => {
+    img.addEventListener("click", (e) => {
+        let overlay = document.createElement("div");
+        overlay.classList.add("popup-overlay");
+        let popupBox = document.createElement("div");
+        popupBox.classList.add("popup-box");
+
+        let popupImgTitle = document.createElement("h3");
+        popupImgTitle.innerHTML = img.alt || "default";
+        popupBox.appendChild(popupImgTitle);
+
+        let popupImg = document.createElement("img");
+        popupImg.src = img.src;
+
+        let closeBotton = document.createElement("span");
+        closeBotton.textContent = "X";
+        closeBotton.classList.add("close-botton");
+        let leftBotton = document.createElement("span");
+        leftBotton.textContent = "<";
+        leftBotton.classList.add("left-botton");
+        let rightBotton = document.createElement("span");
+        rightBotton.textContent = ">";
+        rightBotton.classList.add("right-botton");
+
+        if (i === GalleryImages.length - 1) {
+            rightBotton.style.opacity = "0.6";
+        }
+        if (i === 0) {
+            leftBotton.style.opacity = "0.6";
+        }
+        closeBotton.onclick = () => {
+            closeBotton.parentElement.parentElement.remove();
+        }
+        leftBotton.onclick = () => {
+            rightBotton.style.opacity = "1";
+            if (i - 1 >= 0) {
+                popupImg.src = GalleryImages[i - 1].src;
+                leftBotton.style.opacity = "1";
+                i -= 1;
+            }
+            if (i === 0) {
+                leftBotton.style.opacity = "0.6";
+
+            }
+        }
+        rightBotton.onclick = () => {
+            leftBotton.style.opacity = "1";
+            rightBotton.style.opacity = "1";
+            if (i + 1 < GalleryImages.length) {
+                popupImg.src = GalleryImages[i + 1].src;
+                i += 1;
+                if (i + 1 >= GalleryImages.length) {
+                    rightBotton.style.opacity = "0.6";
+                }
+            }
+        }
+
+        popupBox.appendChild(closeBotton);
+        popupBox.appendChild(leftBotton);
+        popupBox.appendChild(rightBotton);
+        popupBox.appendChild(popupImg);
+        overlay.appendChild(popupBox);
+        document.body.appendChild(overlay);
+    })
+})
+
+// ##################################################################

@@ -8,7 +8,7 @@
 
 :root {
     --main-color: #ff9800;
-    --sections-main-padding: 30px;
+    --sections-main-padding: 50px;
 }
 
 body {
@@ -39,7 +39,6 @@ a {
     display: flex;
     flex-direction: column;
     position: relative;
-    /* z-index: 2; */
 }
 
 .btn {
