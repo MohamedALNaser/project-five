@@ -316,6 +316,15 @@
         margin: 0 0 50px;
     }
     
+    .skills .container {
+        overflow: hidden;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+    }
+    
     .skills .container .skill-box {
         background-color: #fff;
         padding: 10px;
@@ -373,11 +382,15 @@
     .Gallery .Gallery-box {
         padding: 30px 0;
         display: flex;
-        /* align-items: center; */
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
         background-color: #eee;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
     }
     
     .Gallery .Gallery-box img {
@@ -454,4 +467,127 @@
     .popup-overlay .popup-box .right-botton {
         top: 50%;
         right: -18px;
+    }
+    
+    .timeline {
+        background-color: #eee;
+        padding-top: var(--sections-main-padding);
+        padding-bottom: var(--sections-main-padding);
+    }
+    
+    .timeline .container .timeline-content {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .timeline .container .timeline-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: var(--main-color);
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        /*z-index: ;        */
+    }
+    
+    .timeline .container .timeline-content .year {
+        background-color: var(--main-color);
+        color: #fff;
+        margin: 20px auto;
+        text-align: center;
+        width: 50px;
+        padding: 2px 6px;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 4px;
+        z-index: 2;
+    }
+    
+    .timeline .container .timeline-content .left,
+    .timeline .container .timeline-content .right {
+        width: calc(50% - 25px);
+        margin: 0px auto 40px;
+        position: relative;
+    }
+    
+    .timeline .container .timeline-content .left {
+        float: left;
+    }
+    
+    .timeline .container .timeline-content .right {
+        float: right;
+    }
+    
+    .timeline .container .timeline-content .left::before,
+    .timeline .container .timeline-content .right::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        width: 15px;
+        height: 15px;
+        border: 2px solid transparent;
+        border-left-color: var(--main-color);
+        border-top-color: var(--main-color);
+        background-color: #fff;
+    }
+    
+    .timeline .container .timeline-content .left::before {
+        right: -35px;
+    }
+    
+    .timeline .container .timeline-content .right::before {
+        left: -34px;
+        transform: rotate(180deg);
+        -webkit-transform: rotate();
+        -moz-transform: rotate();
+        -ms-transform: rotate();
+        -o-transform: rotate();
+    }
+    
+    .timeline .container .timeline-content>div .content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 14px;
+        -webkit-border-radius: 14px;
+        -moz-border-radius: 14px;
+        -ms-border-radius: 14px;
+        -o-border-radius: 14px;
+    }
+    
+    .timeline .container .timeline-content>div .content::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        border: 10px solid transparent;
+    }
+    
+    .timeline .container .timeline-content .left .content::before {
+        right: -14px;
+        border-right-color: var(--main-color);
+    }
+    
+    .timeline .container .timeline-content .right .content::before {
+        left: -13px;
+        border-left-color: var(--main-color);
+    }
+    
+    .timeline .container .timeline-content>div .content h3 {
+        color: var(--main-color);
+        margin: 0 0 20px;
+        font-weight: bold;
+    }
+    
+    .timeline .container .timeline-content>div .content p {
+        color: #666;
+        line-height: 1.8;
+    }
+    
+    .clearBoth {
+        clear: both;
     }
