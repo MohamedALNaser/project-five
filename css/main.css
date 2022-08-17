@@ -21,18 +21,25 @@
     
     .setting-box .toggle-setting {
         position: absolute;
-        right: -55px;
         top: 170px;
+        right: -55px;
         padding: 5px;
         width: 40px;
         height: 40px;
         cursor: pointer;
-        background-color: #fff;
-        /* border-radius: 50%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--main-color);
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
     }
     
     .setting-box .toggle-setting i.fa.fa-cog {
-        color: #000;
+        color: rgb(255, 255, 255);
     }
     
     .setting-box .setting-container {
