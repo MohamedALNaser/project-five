@@ -197,7 +197,6 @@ GalleryImages.forEach((img, i) => {
 
         let popupImgTitle = document.createElement("h3");
         popupImgTitle.innerHTML = img.alt || "default";
-        popupBox.appendChild(popupImgTitle);
 
         let popupImg = document.createElement("img");
         popupImg.src = img.src;
@@ -225,6 +224,7 @@ GalleryImages.forEach((img, i) => {
             rightBotton.style.opacity = "1";
             if (i - 1 >= 0) {
                 popupImg.src = GalleryImages[i - 1].src;
+                popupImgTitle.innerHTML = GalleryImages[i - 1].alt || "default";
                 leftBotton.style.opacity = "1";
                 i -= 1;
             }
@@ -235,16 +235,17 @@ GalleryImages.forEach((img, i) => {
         }
         rightBotton.onclick = () => {
             leftBotton.style.opacity = "1";
-            rightBotton.style.opacity = "1";
             if (i + 1 < GalleryImages.length) {
+                rightBotton.style.opacity = "1";
                 popupImg.src = GalleryImages[i + 1].src;
+                popupImgTitle.innerHTML = GalleryImages[i + 1].alt || "default";
                 i += 1;
                 if (i + 1 >= GalleryImages.length) {
                     rightBotton.style.opacity = "0.6";
                 }
             }
         }
-
+        popupBox.appendChild(popupImgTitle);
         popupBox.appendChild(closeBotton);
         popupBox.appendChild(leftBotton);
         popupBox.appendChild(rightBotton);
