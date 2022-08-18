@@ -291,13 +291,10 @@
         font-weight: bold;
         font-size: 30px;
         text-transform: uppercase;
+        margin: 0 0 35px;
     }
     
-    .about-us .info-box p {
-        color: #9b9393;
-        margin: 35px 0 0;
-        line-height: 1.8;
-    }
+    .about-us .info-box p {}
     
     .about-us .img-box {
         flex: 1;
@@ -337,6 +334,7 @@
         padding: 10px;
         display: flex;
         align-items: center;
+        margin-bottom: 20px;
     }
     
     .skills .container .skill-box .skill {
@@ -590,11 +588,59 @@
         font-weight: bold;
     }
     
-    .timeline .container .timeline-content>div .content p {
-        color: #666;
-        line-height: 1.8;
-    }
+    .timeline .container .timeline-content>div .content p {}
     
     .clearBoth {
         clear: both;
+    }
+    
+    .features {
+        padding-top: calc(var(--sections-main-padding) + 30px);
+        padding-bottom: calc(var(--sections-main-padding) + 30px);
+    }
+    
+    .features h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--main-color);
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0 0 50px;
+    }
+    
+    .features .feat-box {
+        float: left;
+        width: calc(100% / 3);
+        margin: 0 0 60px;
+        text-align: center;
+    }
+    
+    .features .feat-box img {}
+    
+    .features .feat-box h3 {
+        color: var(--main-color);
+        margin: 10px 0 40px;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+    }
+    
+    .features .feat-box h3::before {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background-color: var(--main-color);
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+    }
+    
+    .features .feat-box p {
+        width: 80%;
+        margin: 0 auto;
     }

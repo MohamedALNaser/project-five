@@ -33,6 +33,12 @@ a {
     text-transform: capitalize;
 }
 
+p {
+    line-height: 1.8;
+    color: #9b9393;
+    color: #979191;
+}
+
 .container {
     width: 1170px;
     margin: 0 auto;
