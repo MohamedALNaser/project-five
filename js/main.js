@@ -7,12 +7,11 @@ toggleSetting.addEventListener("click", () => {
     settingBox.classList.toggle("open");
     settingIcon.classList.toggle("fa-spin");
 });
-// ##################################################################
+
 let liInputNumberValue = document.querySelector(".setting-box .setting-container .option-box .colors h4 span input");
 let liColorsLength = Number(liInputNumberValue.value);
 let setLiColorsNumberValueBtn = document.querySelector(".setting-box .setting-container .option-box .colors h4 span.setValueButton")
 
-// ##################################################################
 // create li-colors list changing the main color in the page
 let LicolorsOptionList = document.querySelector(
     ".setting-box .setting-container .option-box .colors .colors-list"
@@ -81,18 +80,14 @@ const addLiColorsOption = function(liColorsLength) {
     let liColor = document.querySelectorAll(
         ".setting-box .setting-container .option-box .colors .colors-list li"
     );
-
-
     liColor[activeLiColor].classList.add("active");
+    active(liColor, liColor[activeLiColor]);
     window.localStorage.setItem("active-color-index", activeLiColor);
     document.documentElement.style.setProperty('--main-color', colorsList[activeLiColor]);
     // click li to select change the main color
     liColor.forEach((li, j) => {
         li.addEventListener("click", () => {
-            liColor.forEach((e) => {
-                e.classList.remove("active");
-            });
-            li.classList.toggle("active");
+            active(liColor, li);
             window.localStorage.setItem("active-color-index", j); //add the selected li to loacal storge
             document.documentElement.style.setProperty('--main-color', colorsList[j]);
         });
@@ -106,13 +101,17 @@ setLiColorsNumberValueBtn.addEventListener("click", () => {
     addLiColorsOption(liColorsLength);
 })
 
-// ##################################################################
 // random backgrund image
 // check random background option in local storge
 
 let landingPage = document.querySelector(".landing-page");
+
 let randowmLi = document.querySelectorAll(".setting-box .setting-container .option-box .random-background ul.random-list li");
 let randomOption = window.localStorage.getItem("randomOption");
+
+let bulletsOption = window.localStorage.getItem("bulletsOption");
+let bulletsLi = document.querySelectorAll(".setting-box .setting-container .option-box .bullets-option ul.bullets-list li");
+
 let bgForOptNo = window.localStorage.getItem("bgForOptNo");
 let setIntervalDuration = 10000;
 let randomBackg;
@@ -134,15 +133,13 @@ const randomBackground = (randomOption) => {
 }
 
 if (randomOption === null || randomOption === "YES") {
-    randowmLi[0].classList.add("active");
-    randowmLi[1].classList.remove("active");
+    active(randowmLi, randowmLi[0]);
     window.localStorage.setItem("randomOption", "YES");
     randomOption = "YES";
     randomBackg = setInterval(randomBackground, setIntervalDuration, randomOption);
 
 } else {
-    randowmLi[1].classList.add("active");
-    randowmLi[0].classList.remove("active");
+    active(randowmLi, randowmLi[1]);
     imgesBackground = `imgs/0${(bgForOptNo) || 1 }.jpg`;
     landingPage.style.backgroundImage = `url(${imgesBackground})`;
     landingPage.style.transition = " 0.3s";
@@ -150,22 +147,64 @@ if (randomOption === null || randomOption === "YES") {
     window.localStorage.setItem("randomOption", "NO");
     randomOption = "NO";
 }
+
 randowmLi[0].addEventListener("click", () => {
-    randowmLi[0].classList.add("active");
-    randowmLi[1].classList.remove("active");
+    active(randowmLi, randowmLi[0]);
     window.localStorage.setItem("randomOption", "YES");
     randomOption = "YES";
     randomBackg = setInterval(randomBackground, setIntervalDuration, randomOption);
 })
 randowmLi[1].addEventListener("click", () => {
-    randowmLi[1].classList.add("active");
-    randowmLi[0].classList.remove("active");
+    active(randowmLi, randowmLi[1]);
     window.localStorage.setItem("randomOption", "NO");
 
     randomOption = "NO";
     clearInterval(randomBackg)
 
 });
+let bulletSection = document.querySelector(".bullets");
+
+
+if (bulletsOption === "Yes" || bulletsOption === null) {
+    window.localStorage.setItem("bulletsOption", "YES");
+    active(bulletsLi, bulletsLi[0]);
+    bulletSection.style.display = "flex";
+} else {
+    window.localStorage.setItem("bulletsOption", "NO");
+    active(bulletsLi, bulletsLi[1]);
+    bulletSection.style.display = "none";
+}
+
+bulletsLi[0].addEventListener("click", () => {
+    active(bulletsLi, bulletsLi[0]);
+    bulletSection.style.display = "flex";
+    window.localStorage.setItem("bulletsOption", "YES");
+})
+bulletsLi[1].addEventListener("click", () => {
+    active(bulletsLi, bulletsLi[1]);
+    bulletSection.style.display = "none";
+    window.localStorage.setItem("bulletsOption", "NO");
+})
+
+// ##################################################################
+let bullets = document.querySelectorAll(".bullets .nav-bullet");
+let links = document.querySelectorAll(".links a");
+
+function scrollToSection(sections) {
+    sections.forEach((section) => {
+        section.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector(`.${section.dataset.section}`).scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+            });
+        })
+    })
+}
+
+scrollToSection(bullets);
+scrollToSection(links);
 // ##################################################################
 
 /// our skills animation
@@ -256,3 +295,12 @@ GalleryImages.forEach((img, i) => {
 })
 
 // ##################################################################
+
+
+function active(arr, item) {
+    arr.forEach((e) => {
+        e.classList.remove("active");
+    });
+    item.classList.toggle("active");
+
+}
