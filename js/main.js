@@ -10,20 +10,23 @@ toggleSetting.addEventListener("click", () => {
 
 let liInputNumberValue = document.querySelector(".setting-box .setting-container .option-box .colors h4 span input");
 let liColorsLength = Number(liInputNumberValue.value);
+let liColorsLengthLocal = window.localStorage.getItem("li-colors-length");
 let setLiColorsNumberValueBtn = document.querySelector(".setting-box .setting-container .option-box .colors h4 span.setValueButton")
 
 // create li-colors list changing the main color in the page
 let LicolorsOptionList = document.querySelector(
     ".setting-box .setting-container .option-box .colors .colors-list"
 );
-const addLiColorsOption = function(liColorsLength) {
 
+
+const addLiColorsOption = function(liColorsLength) {
     let colorsList = [
         "#ff9800",
         "#f44336",
         "#e91e63",
         "#8bc34a",
         "#9c27b0",
+        "#ca8e00",
         "#3f51b5",
         "#009688",
         "#2196f3",
@@ -94,10 +97,22 @@ const addLiColorsOption = function(liColorsLength) {
     });
 
 }
+
+if (liColorsLengthLocal !== null) {
+    liInputNumberValue.value = liColorsLengthLocal;
+    liColorsLength = liColorsLengthLocal;
+} else {
+    liColorsLength = Number(liInputNumberValue.value);
+    liColorsLengthLocal = liColorsLength;
+    window.localStorage.setItem("li-colors-length", liColorsLengthLocal);
+}
+
 addLiColorsOption(liColorsLength);
 setLiColorsNumberValueBtn.addEventListener("click", () => {
     LicolorsOptionList.innerHTML = "";
     liColorsLength = Number(liInputNumberValue.value);
+    liColorsLengthLocal = liColorsLength;
+    window.localStorage.setItem("li-colors-length", liColorsLengthLocal);
     addLiColorsOption(liColorsLength);
 })
 
@@ -111,6 +126,8 @@ let randomOption = window.localStorage.getItem("randomOption");
 
 let bulletsOption = window.localStorage.getItem("bulletsOption");
 let bulletsLi = document.querySelectorAll(".setting-box .setting-container .option-box .bullets-option ul.bullets-list li");
+
+let resetOption = document.querySelector(".setting-box .setting-container .option-box .reset-option ul.reset-list li");
 
 let bgForOptNo = window.localStorage.getItem("bgForOptNo");
 let setIntervalDuration = 10000;
@@ -157,15 +174,16 @@ randowmLi[0].addEventListener("click", () => {
 randowmLi[1].addEventListener("click", () => {
     active(randowmLi, randowmLi[1]);
     window.localStorage.setItem("randomOption", "NO");
-
     randomOption = "NO";
     clearInterval(randomBackg)
 
 });
+
+
 let bulletSection = document.querySelector(".bullets");
 
 
-if (bulletsOption === "Yes" || bulletsOption === null) {
+if (bulletsOption === "YES" || bulletsOption === null) {
     window.localStorage.setItem("bulletsOption", "YES");
     active(bulletsLi, bulletsLi[0]);
     bulletSection.style.display = "flex";
@@ -185,6 +203,14 @@ bulletsLi[1].addEventListener("click", () => {
     bulletSection.style.display = "none";
     window.localStorage.setItem("bulletsOption", "NO");
 })
+if (localStorage.length !== 0) {
+    resetOption.classList.add("active");
+
+}
+resetOption.onclick = () => {
+    window.localStorage.clear();
+    window.location.reload();
+}
 
 // ##################################################################
 let bullets = document.querySelectorAll(".bullets .nav-bullet");
@@ -217,7 +243,7 @@ window.onscroll = function() {
             setTimeout(() => {
                 span.style.width = span.dataset.precet;
                 span.innerHTML = span.dataset.precet;
-            }, index * 1000);
+            }, index * 1500);
         })
     }
 }

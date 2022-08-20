@@ -147,25 +147,29 @@
 }
 
 .setting-box .setting-container .option-box .random-background,
-.setting-box .setting-container .option-box .bullets-option {
+.setting-box .setting-container .option-box .bullets-option,
+.setting-box .setting-container .option-box .reset-option {
     padding: 5px 0 10px;
     margin: 10px 0;
 }
 
 .setting-box .setting-container .option-box .random-background h4,
-.setting-box .setting-container .option-box .bullets-option h4 {
+.setting-box .setting-container .option-box .bullets-option h4,
+.setting-box .setting-container .option-box .reset-option h4 {
     padding: 10px 0;
     color: white;
 }
 
 .setting-box .setting-container .option-box .random-background ul.random-list,
-.setting-box .setting-container .option-box .bullets-option ul.bullets-list {
+.setting-box .setting-container .option-box .bullets-option ul.bullets-list,
+.setting-box .setting-container .option-box .reset-option ul.reset-list {
     justify-content: center;
     gap: 5px;
 }
 
 .setting-box .setting-container .option-box .random-background ul.random-list li,
-.setting-box .setting-container .option-box .bullets-option ul.bullets-list li {
+.setting-box .setting-container .option-box .bullets-option ul.bullets-list li,
+.setting-box .setting-container .option-box .reset-option ul.reset-list li {
     /* background-color: rgb(202, 142, 0); */
     background-color: var(--main-color);
     padding: 4px 25px;
@@ -181,7 +185,12 @@
 }
 
 .setting-box .setting-container .option-box .random-background ul.random-list li.active,
-.setting-box .setting-container .option-box .bullets-option ul.bullets-list li.active {
+.setting-box .setting-container .option-box .bullets-option ul.bullets-list li.active,
+.setting-box .setting-container .option-box .reset-option ul.reset-list li.active {
+    opacity: 1;
+}
+
+.setting-box .setting-container .option-box .reset-option ul.reset-list li:hover {
     opacity: 1;
 }
 
@@ -328,6 +337,11 @@
 
 .landing-page .container .header-area .sign-up.login-btn {
     width: 150px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .landing-page .container .header-area li a:hover,
@@ -818,4 +832,109 @@
 
 .testimonial .tsm-box .tsm-itemes .person-info p {
     margin-left: 10px;
+}
+
+.contact {
+    padding-top: calc(var(--sections-main-padding) + 30px);
+    padding-bottom: calc(var(--sections-main-padding) + 30px);
+    background-image: url(../imgs/contact.png);
+    background-size: cover;
+    position: relative;
+    min-height: 600px;
+}
+
+.contact .contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 250, 250, 0.6);
+    z-index: 1;
+}
+
+.contact .container {
+    align-items: center;
+    z-index: 2;
+}
+
+.contact h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 0 50px;
+}
+
+.contact form {
+    overflow: hidden;
+    max-width: 800px;
+}
+
+.contact form .left {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.contact form .right {
+    float: right;
+    width: 50%;
+    padding: 20px;
+}
+
+.contact form input:not([type="submit"]),
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: rgba(218, 218, 218, 0.19);
+}
+
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus {
+    outline: 1px solid var(--main-color);
+}
+
+.contact form input {
+    height: 40px;
+}
+
+.contact form textarea {
+    max-height: 140px;
+    max-width: 100%;
+}
+
+.contact form input[type="submit"] {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+.contact form textarea:focus::-webkit-input-placeholder,
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder {
+    color: transparent;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.contact form textarea:focus::-moz-placeholder,
+.contact form input:not([type="submit"]):focus::-moz-placeholder {
+    color: transparent;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
