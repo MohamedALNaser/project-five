@@ -173,7 +173,7 @@ let skills = document.querySelector(".skills");
 let spans = document.querySelectorAll(".skills .container .skill-box .percentage span");
 window.onscroll = function() {
     // console.log((skills.offsetTop + skills.offsetHeight - this.innerHeight) + "===" + window.scrollY);
-    if (window.scrollY >= (skills.offsetTop + skills.offsetHeight - this.innerHeight)) {
+    if (window.scrollY >= (skills.offsetTop + (0.5 * skills.offsetHeight) - this.innerHeight)) {
         spans.forEach((span, index) => {
             setTimeout(() => {
                 span.style.width = span.dataset.precet;

@@ -644,3 +644,90 @@
         width: 80%;
         margin: 0 auto;
     }
+    
+    .testimonial {
+        position: relative;
+        padding-top: calc(var(--sections-main-padding) + 30px);
+        /* padding-bottom: calc(var(--sections-main-padding) + 30px); */
+    }
+    
+    .testimonial::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: var(--main-color);
+        /* opacity: 0.5; */
+        z-index: -1;
+    }
+    
+    .testimonial::after {
+        content: "";
+        width: 50%;
+        min-height: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+    
+    .testimonial h2 {
+        text-align: left;
+        /* text-transform: uppercase; */
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0 0 calc(var(--sections-main-padding) + 30px);
+    }
+    
+    .testimonial .container {
+        display: block;
+    }
+    
+    .testimonial .tsm-box {
+        background-color: #fff;
+        float: left;
+        width: calc(98% / 3);
+        margin: 0 0 calc(var(--sections-main-padding) + 30px);
+        /* display: flex;
+        flex-direction: column; */
+        padding: 20px;
+    }
+    
+    .testimonial .tsm-box:nth-of-type(3n+2) {
+        margin: 0 1%;
+    }
+    
+    .testimonial .tsm-box>p {
+        margin: 0 0 35px;
+        font-style: italic;
+    }
+    
+    .testimonial .tsm-box .tsm-itemes {
+        /* width: 90%; */
+    }
+    
+    .testimonial .tsm-box .tsm-itemes img {
+        padding-top: 4px;
+        border-radius: 50%;
+        float: left;
+        margin: 0 20px 0 0;
+    }
+    
+    .testimonial .tsm-box .tsm-itemes .person-info {
+        overflow: hidden;
+    }
+    
+    .testimonial .tsm-box .tsm-itemes .person-info h3 {
+        color: var(--main-color);
+        margin: 10px 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .testimonial .tsm-box .tsm-itemes .person-info p {
+        margin-left: 10px;
+    }
