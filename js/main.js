@@ -8,10 +8,10 @@ toggleSetting.addEventListener("click", () => {
     settingIcon.classList.toggle("fa-spin");
 });
 
-let liInputNumberValue = document.querySelector(".setting-box .setting-container .option-box .colors h4 span input");
+let liInputNumberValue = document.querySelector(".setting-box .setting-container .option-box .colors  span input");
 let liColorsLength = Number(liInputNumberValue.value);
 let liColorsLengthLocal = window.localStorage.getItem("li-colors-length");
-let setLiColorsNumberValueBtn = document.querySelector(".setting-box .setting-container .option-box .colors h4 span.setValueButton")
+let setLiColorsNumberValueBtn = document.querySelector(".setting-box .setting-container .option-box .colors span.setValueButton")
 
 // create li-colors list changing the main color in the page
 let LicolorsOptionList = document.querySelector(
