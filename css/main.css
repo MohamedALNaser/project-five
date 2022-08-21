@@ -210,7 +210,7 @@
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
-    min-height: 100%;
+    /* min-height: 100%; */
     min-width: 40px;
     display: flex;
     flex-direction: column;
@@ -314,20 +314,27 @@
 }
 
 .landing-page .container .header-area .logo {
-    width: 300px;
+    width: 150px;
     padding: 5px;
     text-transform: uppercase;
 }
 
-.landing-page .container .header-area .links {
-    width: 50%;
+.landing-page .container .header-area .links-container {
+    width: calc(80% - 150px);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 }
 
-.landing-page .container .header-area .links li {
+.landing-page .container .header-area .links-container .links {
+    width: 75%;
+}
+
+.landing-page .container .header-area .links-container .links li {
     display: inline-block;
 }
 
-.landing-page .container .header-area .links li a {
+.landing-page .container .header-area .links-container .links li a {
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -342,6 +349,16 @@
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
+}
+
+.landing-page .container .header-area .links-container .nav-icon {
+    position: absolute;
+    right: -10px;
+    top: -1px;
+}
+
+.landing-page .container .header-area .links-container .nav-icon i.fa.fa-bars {
+    font-size: 22px;
 }
 
 .landing-page .container .header-area li a:hover,
@@ -527,7 +544,7 @@
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     background-color: #fff;
-    width: 700px;
+    width: 80%;
     /*height:500px;
         */
     padding: 20px;
@@ -690,7 +707,9 @@
     font-weight: bold;
 }
 
-.timeline .container .timeline-content>div .content p {}
+.timeline .container .timeline-content>div .content p {
+    font-size: 16px;
+}
 
 .clearBoth {
     clear: both;
@@ -717,7 +736,13 @@
     text-align: center;
 }
 
-.features .feat-box img {}
+.features .feat-box .feat {
+    width: 100%;
+}
+
+.features .feat-box .feat img {
+    width: 100%;
+}
 
 .features .feat-box h3 {
     color: var(--main-color);
@@ -832,6 +857,7 @@
 
 .testimonial .tsm-box .tsm-itemes .person-info p {
     margin-left: 10px;
+    font-style: italic;
 }
 
 .contact {
