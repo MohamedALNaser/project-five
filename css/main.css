@@ -749,6 +749,7 @@
 
 .features .feat-box .feat img {
     width: 100%;
+    max-width: 300px;
 }
 
 .features .feat-box h3 {
@@ -782,7 +783,7 @@
 .testimonial {
     position: relative;
     padding-top: calc(var(--sections-main-padding) + 30px);
-    /* padding-bottom: calc(var(--sections-main-padding) + 30px); */
+    padding-bottom: calc(var(--sections-main-padding) + 30px);
 }
 
 .testimonial::before {

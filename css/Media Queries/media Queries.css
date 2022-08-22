@@ -4,6 +4,40 @@
     .container {
         width: 90%;
     }
+    .landing-page .container .intro-text {
+        width: 90%;
+    }
+    .landing-page .container .intro-text h1,
+    .about-us .info-box h2,
+    .skills h2,
+    .features h2,
+    .testimonial h2,
+    .contact h2 {
+        font-size: 22px;
+    }
+    .landing-page .container .intro-text p,
+    .about-us .info-box p .timeline .container .timeline-content>div .content p,
+    .features .feat-box p,
+    .testimonial .tsm-box>p,
+    .testimonial .tsm-box .tsm-itemes .person-info p {
+        font-size: 12px;
+    }
+    .features .feat-box {
+        width: 80% !important;
+        margin: 0 10px 60px 32px !important;
+    }
+    .testimonial .tsm-box {
+        text-align: center;
+    }
+    .testimonial .tsm-box .tsm-itemes img {
+        float: none;
+        width: 130px;
+        margin: 0 auto;
+    }
+    .contact form input:not([type="submit"]),
+    .contact form textarea {
+        font-size: 14px;
+    }
 }
 
 
@@ -12,6 +46,34 @@
 @media (min-width: 320px) and (max-width: 485.98px) {
     .container {
         width: 90%;
+    }
+    .landing-page .container .intro-text {
+        width: 90%;
+    }
+    .landing-page .container .intro-text h1,
+    .about-us .info-box h2,
+    .skills h2,
+    .features h2,
+    .testimonial h2,
+    .contact h2 {
+        font-size: 25px;
+    }
+    .landing-page .container .intro-text p,
+    .about-us .info-box p .timeline .container .timeline-content>div .content p,
+    .features .feat-box p {
+        font-size: 14px;
+    }
+    .features .feat-box {
+        width: 80% !important;
+        margin: 0 10px 60px 32px !important;
+    }
+    .testimonial .tsm-box {
+        text-align: center;
+    }
+    .testimonial .tsm-box .tsm-itemes img {
+        float: none;
+        width: 130px;
+        margin: 0 auto;
     }
 }
 
@@ -27,6 +89,13 @@
     }
     .Gallery .Gallery-box img {
         width: 90%;
+    }
+    .features .feat-box {
+        width: 80% !important;
+        margin: 0 0 60px 50px !important;
+    }
+    .features .feat-box .feat img {
+        width: 80%;
     }
 }
 
