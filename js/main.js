@@ -352,10 +352,8 @@ let loginItems992 = document.querySelectorAll(".landing-page .container .header-
 
 menutogglePerant.appendChild(menu);
 
-function toggleMenu() {
-    menu.classList.toggle("active");
-}
-menutoggle.addEventListener("click", toggleMenu);
+let hidenMenuItems = document.querySelectorAll(".landing-page .container .header-area .links-container li.hiden-menu-item");
+
 
 function menuToggleItem(arr, arr2) {
     menu.innerHTML = "";
@@ -365,7 +363,7 @@ function menuToggleItem(arr, arr2) {
     arr.forEach((item) => {
         item.classList.add("hiden-menu-item");
     })
-    let hidenMenuItems = document.querySelectorAll(".landing-page .container .header-area .links-container li.hiden-menu-item");
+    hidenMenuItems = document.querySelectorAll(".landing-page .container .header-area .links-container li.hiden-menu-item");
 
     hidenMenuItems.forEach((item) => {
         menu.appendChild(item.cloneNode(true));
@@ -407,5 +405,40 @@ window.addEventListener('resize', (e) => {
     addHidenMenu(window.innerWidth);
 
 });
+document.addEventListener("click", (e) => {
+    console.log(e.target);
+    if (e.target.classList.contains("nav-icon") || (e.target.classList.contains("fa-bars"))) {
+        menu.classList.toggle("active");
+        if (menu.classList.contains("active")) {
+            menutoggle.style.cssText = `
+            outline: rgb(255, 255, 255) solid 2px;
+            padding: 1px 4px;`;
+        } else {
+            menutoggle.style.cssText = `
+            outline: rgb(255, 255, 255) solid 2px;
+            padding: 0;`;
+        }
 
+    } else {
+        menu.classList.remove("active");
+    }
+})
+
+
+menu.onclick = function(ev) {
+    ev.stopPropagation();
+};
 // ##################################################################
+
+// document.addEventListener("scroll", (e) => {
+//         let scroll = window.scrollY;
+//         let landingPage = document.querySelector(".landing-page ");
+//         let landingPageHeight = landingPage.offsetHeight;
+//         if (scroll > landingPageHeight) {
+//             landingPage.classList.add("fixed");
+//         } else {
+//             landingPage.classList.remove("fixed");
+//         }
+//     }
+
+// )
