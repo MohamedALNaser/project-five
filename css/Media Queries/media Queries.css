@@ -50,19 +50,6 @@
     .landing-page .container .intro-text {
         width: 90%;
     }
-    .landing-page .container .intro-text h1,
-    .about-us .info-box h2,
-    .skills h2,
-    .features h2,
-    .testimonial h2,
-    .contact h2 {
-        font-size: 25px;
-    }
-    .landing-page .container .intro-text p,
-    .about-us .info-box p .timeline .container .timeline-content>div .content p,
-    .features .feat-box p {
-        font-size: 14px;
-    }
     .features .feat-box {
         width: 80% !important;
         margin: 0 10px 60px 32px !important;
@@ -87,9 +74,6 @@
     .landing-page .container .intro-text {
         width: 95%;
     }
-    .Gallery .Gallery-box img {
-        width: 90%;
-    }
     .features .feat-box {
         width: 80% !important;
         margin: 0 0 60px 50px !important;
@@ -112,11 +96,18 @@
     .about-us .img-box img {
         width: 90%;
     }
+    .landing-page .container .header-area .links-container {
+        width: calc(100% - 150px);
+        justify-content: flex-end;
+    }
     .landing-page .container .header-area .links-container .links li {
         display: none;
     }
     .landing-page .container .header-area .links-container .nav-icon {
         position: relative;
+    }
+    .Gallery .Gallery-box img {
+        width: 90%;
     }
     .contact form {
         display: flex;
@@ -138,6 +129,19 @@
     .contact form textarea {
         width: 80% !important;
     }
+    .landing-page .container .intro-text h1,
+    .about-us .info-box h2,
+    .skills h2,
+    .features h2,
+    .testimonial h2,
+    .contact h2 {
+        font-size: 30px;
+    }
+    .landing-page .container .intro-text p,
+    .about-us .info-box p .timeline .container .timeline-content>div .content p,
+    .features .feat-box p {
+        font-size: 14px;
+    }
 }
 
 
@@ -146,6 +150,9 @@
 @media (min-width: 576px) and (max-width: 767.98px) {
     .container {
         max-width: 535px;
+    }
+    .landing-page .container .header-area .links-container .links li:nth-child(n+4):not(:last-child) {
+        display: none;
     }
 }
 
@@ -176,9 +183,6 @@
         width: 85%;
         float: none;
         margin: 0 auto calc(var(--sections-main-padding) + 30px) !important;
-    }
-    .landing-page .container .header-area .links-container .links li:nth-child(n+4):not(:last-child) {
-        display: none;
     }
 }
 
@@ -236,6 +240,9 @@
     .features .feat-box {
         width: calc(90% / 3);
         margin: 0 10px 60px 24px;
+    }
+    .landing-page .container .header-area .links-container .menu {
+        display: none;
     }
 }
 

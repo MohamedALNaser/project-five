@@ -220,17 +220,20 @@ function scrollToSection(sections) {
     sections.forEach((section) => {
         section.addEventListener("click", (e) => {
             e.preventDefault();
-            document.querySelector(`.${section.dataset.section}`).scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest"
-            });
+            if (section.dataset.section !== undefined) {
+                document.querySelector(`.${section.dataset.section}`).scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                    inline: "nearest"
+                });
+            }
         })
     })
 }
 
 scrollToSection(bullets);
 scrollToSection(links);
+
 // ##################################################################
 
 /// our skills animation
@@ -330,3 +333,79 @@ function active(arr, item) {
     item.classList.toggle("active");
 
 }
+
+
+// ##################################################################
+
+let menutogglePerant = document.querySelector(".landing-page .container .header-area .links-container ");
+let menutoggle = document.querySelector(".landing-page .container .header-area .links-container .nav-icon");
+
+let menu = document.createElement("div");
+menu.classList.add("menu");
+
+let linkItems = document.querySelectorAll(".landing-page .container .header-area .links-container li");
+
+let linkItems576 = document.querySelectorAll(".landing-page .container .header-area .links-container .links li");
+let linkItems786 = document.querySelectorAll(".landing-page .container .header-area .links-container .links li:nth-child(n+4):not(:last-child) ");
+let loginItems992 = document.querySelectorAll(".landing-page .container .header-area .sign-up.login-btn li");
+
+
+menutogglePerant.appendChild(menu);
+
+function toggleMenu() {
+    menu.classList.toggle("active");
+}
+menutoggle.addEventListener("click", toggleMenu);
+
+function menuToggleItem(arr, arr2) {
+    menu.innerHTML = "";
+    arr2.forEach((item2) => {
+        item2.classList.remove("hiden-menu-item");
+    })
+    arr.forEach((item) => {
+        item.classList.add("hiden-menu-item");
+    })
+    let hidenMenuItems = document.querySelectorAll(".landing-page .container .header-area .links-container li.hiden-menu-item");
+
+    hidenMenuItems.forEach((item) => {
+        menu.appendChild(item.cloneNode(true));
+    });
+    let menuLinks = document.querySelectorAll(".landing-page .container .header-area .links-container .menu li.hiden-menu-item a");
+
+    scrollToSection(menuLinks);
+
+}
+let flag = 0;
+
+function addHidenMenu(windowWidth) {
+    if (windowWidth < 576 && flag !== 1) {
+        menuToggleItem(linkItems576, []);
+        menuToggleItem(loginItems992, []);
+        flag = 1;
+    }
+    if (windowWidth < 768 && windowWidth >= 576 && flag !== 2) {
+        menuToggleItem(linkItems786, linkItems576);
+        menuToggleItem(loginItems992, []);
+        flag = 2;
+    }
+    if (windowWidth < 992 && windowWidth >= 768 && flag !== 3) {
+        menuToggleItem(loginItems992, linkItems576);
+        flag = 3;
+    }
+    if (windowWidth >= 992 && flag !== 0) {
+        flag = 0;
+        menuToggleItem([], linkItems576);
+        menuToggleItem([], loginItems992);
+    }
+
+
+}
+
+addHidenMenu(window.innerWidth);
+
+window.addEventListener('resize', (e) => {
+    addHidenMenu(window.innerWidth);
+
+});
+
+// ##################################################################
