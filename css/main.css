@@ -1027,3 +1027,21 @@
         -ms-transition: 0.3s;
         -o-transition: 0.3s;
     }
+    
+    .footer {
+        background-color: #333;
+        padding: 20px 0;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .footer .container {
+        display: block;
+    }
+    
+    .footer .container a {
+        color: var(--main-color);
+        color: rgb(178, 171, 161);
+    }

@@ -19,7 +19,8 @@
         .about-us .info-box p .timeline .container .timeline-content>div .content p,
         .features .feat-box p,
         .testimonial .tsm-box>p,
-        .testimonial .tsm-box .tsm-itemes .person-info p {
+        .testimonial .tsm-box .tsm-itemes .person-info p,
+        .footer .container {
             font-size: 12px;
         }
         .testimonial .tsm-box {
@@ -33,6 +34,9 @@
         .contact form input:not([type="submit"]),
         .contact form textarea {
             font-size: 14px;
+        }
+        .timeline .container .timeline-content>div .content h3 {
+            text-align: center;
         }
     }
     /* // very Small devices (landscape phones, less than 480px) */
@@ -52,6 +56,12 @@
             width: 110px;
             margin: 0 auto;
         }
+        .footer .container {
+            font-size: 16px;
+        }
+        .timeline .container .timeline-content>div .content h3 {
+            text-align: center;
+        }
     }
     /* // Small devices (landscape phones, less than 576px) */
     
@@ -61,6 +71,9 @@
         }
         .landing-page .container .intro-text {
             width: 95%;
+        }
+        .footer .container {
+            font-size: 18px;
         }
     }
     
@@ -95,11 +108,10 @@
             width: 90%;
         }
         .features .feat-box {
-            width: 80%;
-            margin: 0 10px 60px 32px;
+            width: 80% !important;
         }
         .features .feat-box .feat img {
-            width: 70%
+            width: 60%;
         }
         .timeline {
             padding-bottom: calc(var(--sections-main-padding) + 30px);
@@ -126,9 +138,6 @@
             align-items: center;
             width: 100%;
         }
-        .contact form input {
-            width: 80% !important;
-        }
         .contact form>div {
             width: 100% !important;
             float: none;
@@ -136,9 +145,6 @@
             margin: 0 auto;
             flex-direction: column;
             align-items: center;
-        }
-        .contact form textarea {
-            width: 80% !important;
         }
         .landing-page .container .intro-text h1,
         .about-us .info-box h2,

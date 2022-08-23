@@ -240,7 +240,6 @@ scrollToSection(links);
 let skills = document.querySelector(".skills");
 let spans = document.querySelectorAll(".skills .container .skill-box .percentage span");
 window.onscroll = function() {
-    // console.log((skills.offsetTop + skills.offsetHeight - this.innerHeight) + "===" + window.scrollY);
     if (window.scrollY >= (skills.offsetTop + (0.5 * skills.offsetHeight) - this.innerHeight)) {
         spans.forEach((span, index) => {
             setTimeout(() => {
@@ -406,7 +405,6 @@ window.addEventListener('resize', (e) => {
 
 });
 document.addEventListener("click", (e) => {
-    console.log(e.target);
     if (e.target.classList.contains("nav-icon") || (e.target.classList.contains("fa-bars"))) {
         menu.classList.toggle("active");
         if (menu.classList.contains("active")) {
